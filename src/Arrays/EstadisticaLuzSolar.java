@@ -1,4 +1,4 @@
-package Unidad4;
+package Arrays;
 
 public class EstadisticaLuzSolar {
     public static void main(String[] args) {

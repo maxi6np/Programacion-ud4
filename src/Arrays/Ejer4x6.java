@@ -1,4 +1,4 @@
-package Unidad4;
+package Arrays;
 
 public class Ejer4x6 {
     public static void main(String[] args) {
