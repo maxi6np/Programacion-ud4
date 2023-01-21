@@ -1,14 +1,12 @@
-package pila;
+package HerenciaPolimorfismo.TestStack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
 
 class TestStack {
 
-	@Test
 	void test() {
 		Stack pila = new Stack(3);
 
