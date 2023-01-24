@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 
 class TestStack {
+	public static void main(String[] args) {
 
-	void test() {
 		Stack pila = new Stack(3);
 
 		// Al principio debe estar vacía

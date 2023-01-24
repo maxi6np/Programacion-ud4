@@ -34,7 +34,7 @@ public class Stack {
         if (!empty()) {
             return valores[limite--];
         } else {
-            return "No se puede extraer ningún elemento de la pila porque está vacía";
+            return null;
         }
     }
 
@@ -46,17 +46,32 @@ public class Stack {
     }
 
     public String[] getAll() {
+        String[] todos = new String[valores.length];
         for (String a : valores) {
-            return new String[]{a};
+            if ( a != null) {
+                todos[limite] = a;
+                limite++;
+            }else{
+                limite--;
+            }
         }
-        return new String[]{""};
+        return todos;
     }
 
     public boolean search(String planta) {
-        if (Arrays.asList(valores).contains(planta)){
+        if (Arrays.asList(valores).contains(planta)) {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Stack{" +
+                "tamanoPila=" + tamanoPila +
+                ", valores=" + Arrays.toString(valores) +
+                ", limite=" + limite +
+                '}';
     }
 
 
