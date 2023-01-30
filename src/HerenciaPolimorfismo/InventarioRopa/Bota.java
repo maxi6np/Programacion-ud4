@@ -8,6 +8,18 @@ public class Bota extends Calzado{
         this.impermeable = false;
     }
 
+    public boolean isImpermeable() {
+        return impermeable;
+    }
+
+    public void setImpermeable(boolean impermeable) {
+        this.impermeable = impermeable;
+    }
+
+    public String anadirMensaje(){
+        return "Se ha añadido una bota";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Bota{");

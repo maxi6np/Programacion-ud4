@@ -7,6 +7,9 @@ public class Ropa extends Prenda{
         super(codigo, descripcion, precio);
         this.talla = talla;
     }
+    public String anadirMensaje(){
+        return "";
+    }
 
     @Override
     public String toString() {

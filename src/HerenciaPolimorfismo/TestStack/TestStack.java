@@ -1,6 +1,6 @@
 package HerenciaPolimorfismo.TestStack;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import java.util.Arrays;
 
@@ -36,6 +36,7 @@ class TestStack {
 		assertFalse(Arrays.equals(new String[] { "Tercera", "Segunda", "Primera" }, pila.getAll()));
 		// Busco una palabra que existe
 		assertTrue(pila.search("Segunda"));
+		pila.show();
 		// Y una que no existe
 		assertFalse(pila.search("Cuarta"));
 		// Vacío la pila
@@ -50,5 +51,6 @@ class TestStack {
 		assertTrue(pila.empty());
 
 	}
+
 
 }

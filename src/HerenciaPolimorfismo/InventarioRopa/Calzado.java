@@ -8,6 +8,18 @@ public class Calzado extends Prenda{
         this.talla = talla;
     }
 
+    public int getTalla() {
+        return talla;
+    }
+
+    public void setTalla(int talla) {
+        this.talla = talla;
+    }
+
+    public String anadirMensaje(){
+        return "";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Calzado{");

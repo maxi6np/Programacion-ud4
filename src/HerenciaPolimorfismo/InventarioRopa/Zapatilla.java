@@ -5,6 +5,11 @@ public class Zapatilla extends Calzado{
         super(codigo, descripcion, precio, talla);
     }
 
+    public String anadirMensaje(){
+        return "Se ha añadido una zapatilla";
+    }
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Zapatilla{");

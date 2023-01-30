@@ -22,57 +22,52 @@ public class Stack {
     }
 
     public boolean push(String planta) {
-        if (!full()) {
-            valores[++limite] = planta;
-            return true;
-        } else {
-            return false; //no hay espacio
+        if (full()) {
+            return false;
         }
+        limite++;
+        valores[limite] = planta;
+        return true;
     }
 
     public String pop() {
-        if (!empty()) {
-            return valores[limite--];
-        } else {
+        if (empty()) {
             return null;
         }
+        String valor = valores[limite];
+        limite--;
+        return valor;
     }
 
-    public String show() {
-        for (String a : valores) {
-            return a;
+    //Muestra todos los elementos de la pila (sin nulls)
+    public void show() {
+        for (int i = limite; i >= 0; i--) {
+            System.out.println(valores[i]);;
         }
-        return "";
     }
 
+    //Devuelve unarray con todos los elementos de la pila (sin nulls)
     public String[] getAll() {
-        String[] todos = new String[valores.length];
-        for (String a : valores) {
-            if ( a != null) {
-                todos[limite] = a;
-                limite++;
-            }else{
-                limite--;
-            }
-        }
-        return todos;
+        return Arrays.copyOfRange(valores, 0, limite + 1);
     }
 
+    //Comprueba  si  un  String  pasado  como  parámetro,  está  presente  en  la pila o no
     public boolean search(String planta) {
-        if (Arrays.asList(valores).contains(planta)) {
-            return true;
+        for (int i = 0; i <= limite; i++) {
+            if (valores[i].equals(planta)){
+                return true;
+            }
         }
         return false;
     }
 
     @Override
     public String toString() {
-        return "Stack{" +
-                "tamanoPila=" + tamanoPila +
-                ", valores=" + Arrays.toString(valores) +
-                ", limite=" + limite +
-                '}';
+        final StringBuilder sb = new StringBuilder("Stack{");
+        sb.append("tamanoPila=").append(tamanoPila);
+        sb.append(", valores=").append(Arrays.toString(valores));
+        sb.append(", limite=").append(limite);
+        sb.append('}');
+        return sb.toString();
     }
-
-
 }

@@ -6,6 +6,10 @@ public class Camiseta extends Ropa{
         super(codigo, descripcion, precio, talla);
     }
 
+    public String anadirMensaje(){
+        return "Se ha añadido una camiseta";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Camiseta{");

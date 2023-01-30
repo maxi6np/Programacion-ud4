@@ -8,6 +8,18 @@ public class Pantalon extends Ropa{
         this.tipo = tipo;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String anadirMensaje(){
+        return "Se ha añadido un pantalon";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Pantalon{");
