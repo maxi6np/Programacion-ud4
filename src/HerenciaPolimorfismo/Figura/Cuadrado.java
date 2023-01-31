@@ -5,9 +5,11 @@ import java.util.Objects;
 
 public class Cuadrado extends Figura{
     private double lado;
+    private Point centro;
 
-    public Cuadrado(int x, int y, ArrayList listaFiguras, double lado) {
-        super(x, y, listaFiguras);
+    public Cuadrado(int x, int y, double lado) {
+        super(x, y);
+        centro = new Point(x,y);
         this.lado = lado;
     }
 

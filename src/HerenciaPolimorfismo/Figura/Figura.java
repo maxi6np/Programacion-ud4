@@ -3,12 +3,12 @@ package HerenciaPolimorfismo.Figura;
 import java.awt.*;
 import java.util.ArrayList;
 
-public abstract class Figura extends GestorFiguras{
+public abstract class Figura extends GestorFiguras implements Movible{
     private Point centro;
     private Color color;
 
-    public Figura(int x, int y, ArrayList listaFiguras) {
-        super(listaFiguras);
+    public Figura(int x, int y) {
+        super();
         centro = new Point(x,y);
     }
 
@@ -42,4 +42,14 @@ public abstract class Figura extends GestorFiguras{
         sb.append('}');
         return sb.toString();
     }
+
+
+    public void moverHorizontal(int desp){
+        getCentro().setX(getCentro().getX() + desp);
+    }
+    public void moverVertical(int desp){
+        getCentro().setY(getCentro().getY() + desp);
+
+    }
+
 }

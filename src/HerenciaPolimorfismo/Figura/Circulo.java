@@ -6,9 +6,11 @@ import java.util.Objects;
 public class Circulo extends Figura {
     private double radio;
     private final double PI = Math.PI;
+    private Point centro;
 
-    public Circulo(int x, int y, ArrayList listaFiguras,double radio) {
-        super(x, y, listaFiguras);
+    public Circulo(int x, int y,double radio) {
+        super(x, y);
+        centro = new Point(x,y);
         this.radio = radio;
     }
 

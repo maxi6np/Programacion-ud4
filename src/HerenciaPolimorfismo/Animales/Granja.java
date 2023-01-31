@@ -6,7 +6,7 @@ public class Granja {
     private ArrayList<Animal> animales;
 
     public Granja() {
-        animales = new ArrayList();
+        animales = new ArrayList<Animal>();
     }
 
     public void addAnimal(Animal a) {

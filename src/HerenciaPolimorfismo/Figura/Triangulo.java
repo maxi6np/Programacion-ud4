@@ -7,9 +7,11 @@ public class Triangulo extends Figura {
     private double lado1;
     private double lado2;
     private double base;
+    private Point centro;
 
-    public Triangulo(int x, int y, ArrayList listaFiguras, double lado1, double lado2, double base) {
-        super(x, y, listaFiguras);
+    public Triangulo(int x, int y,  double lado1, double lado2, double base) {
+        super(x, y);
+        centro = new Point(x,y);
         this.lado1 = lado1;
         this.lado2 = lado2;
         this.base = base;
