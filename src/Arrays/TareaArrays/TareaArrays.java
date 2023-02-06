@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.TareaArrays;
 
 import java.util.Arrays;
 
