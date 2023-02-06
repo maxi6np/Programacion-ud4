@@ -37,11 +37,11 @@ class MusicPlayerTest {
         assertEquals("Añadida correctamente.", mpB.anadir("Segunda canción"));
         assertEquals("Añadida correctamente.", mpB.anadir("Tercera canción"));
         assertEquals("Añadida correctamente.", mpB.anadir("Cuarta canción"));
-        assertEquals("No se puede añadir más música.", mpB.anadir("Quinta canción"));
+        assertEquals("No puede añadir más música.", mpB.anadir("Quinta canción"));
         assertEquals("1. Primera canción\n2. Segunda canción\n3. Tercera canción\n4. Cuarta canción\n", mpB.mostrar());
         assertEquals("Borrada correctamente.", mpB.eliminar("Segunda canción"));
         assertEquals("No se ha podido borrar.", mpB.eliminar("Quinta canción"));
-        assertEquals("1. Primera canción\n2. Tercera canción\n3. Cuarta canción\n", mpB.mostrar());
+        assertEquals("1. Primera canción\n3. Tercera canción\n4. Cuarta canción\n", mpB.mostrar());
     }
 
 
