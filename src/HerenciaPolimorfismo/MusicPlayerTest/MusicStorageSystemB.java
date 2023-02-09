@@ -5,9 +5,17 @@ public class MusicStorageSystemB extends MusicStorageSystem{
     public MusicStorageSystemB(int tamanioLista) {
         super(tamanioLista);
     }
-    public void ordenarListaMusica() {
-        // No hace nada, la lista no se ordena
+    public boolean addMusic(String musica) {
+        for(int i = 0; i < listaMusica.length; i++){
+            if (listaMusica[i] == null){
+                listaMusica[i] = musica;
+                setIndex(getIndex() + 1);
+                return true;
+            }
+        }
+        return false;
     }
+
 
     @Override
     public String toString() {

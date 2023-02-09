@@ -1,42 +1,43 @@
 package HerenciaPolimorfismo.Cine;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cine {
     private String localidad;
     private String nombre;
-    private ArrayList<Clientes> numClientes;
+    private Clientes[] numClientes;
+    private Peliculas[] peliculas;
+    private Peliculas[] cartelera;
     private int entradasJovenes;
     private int entradasJubilados;
     private int entradasVIP;
 
-    public Cine(String nombre, String localidad) {
+    public Cine(String localidad, String nombre) {
         this.localidad = localidad;
         this.nombre = nombre;
-        numClientes = new ArrayList<>();
-    }
-
-    public void anadirCliente(Clientes cliente){
-        numClientes.add(cliente);
-        switch (cliente.getTipoCliente()) {
-            case "joven" -> entradasJovenes++;
-            case "jubilado" -> entradasJubilados++;
-            case "VIP" -> entradasVIP++;
-        }
+        numClientes = new Clientes[100];
+        peliculas = new Peliculas[5];
+        entradasJovenes = 0;
+        entradasJubilados = 0;
+        entradasVIP = 0;
     }
 
     public String getLocalidad() {
         return localidad;
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public int getEntradasJovenes() {
         return entradasJovenes;
     }
+
     public int getEntradasJubilados() {
         return entradasJubilados;
     }
+
     public int getEntradasVIP() {
         return entradasVIP;
     }
@@ -51,5 +52,59 @@ public class Cine {
         sb.append(", entradasVIP=").append(entradasVIP);
         sb.append('}');
         return sb.toString();
+    }
+
+
+    public boolean anadirPelicula(Peliculas peli) {
+        for (int i = 0; i < peliculas.length; i++) {
+            if (peliculas[i] == null) {
+                peliculas[i] = peli;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean borrarPelicula(String titulo, int anioEstreno) {
+        Peliculas p = new Peliculas(titulo, anioEstreno);
+        for (int i = 0; i < peliculas.length; i++) {
+            if (p.equals(peliculas[i])) {
+                peliculas[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean anadirCliente(Clientes cliente) {
+        for (int i = 0; i < numClientes.length; i++) {
+            if (cliente.equals(numClientes[i])) {
+                numClientes[i] = null;
+                if(cliente instanceof ClienteJubilado){
+                    entradasJubilados++;
+                }else if(cliente instanceof ClienteVIP){
+                    entradasVIP++;
+                }else if(cliente instanceof ClienteJoven){
+                    entradasJovenes++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void comprarEntrada(Peliculas peli, Clientes cliente) {
+        peli.setEntradasVendidas(peli.getEntrada() + 1);
+        cliente.comprarEntrada(peli);
+    }
+
+
+    public void cambiarDatos(String nombre, String localidad) {
+        this.localidad = localidad;
+        this.nombre = nombre;
+    }
+    public void cambiarDatos(String localidad) {
+        cambiarDatos(localidad,localidad);
     }
 }

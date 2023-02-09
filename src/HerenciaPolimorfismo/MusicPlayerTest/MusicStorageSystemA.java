@@ -8,8 +8,17 @@ public class MusicStorageSystemA extends MusicStorageSystem {
         super(tamanioLista);
     }
 
-    public void ordenarListaMusica() {
-        Arrays.sort(getAllMusic(), new ComparadorNulos());
+    private void ordenarListaMusica() {
+        Arrays.sort(listaMusica, new ComparadorNulos());
+    }
+    public boolean addMusic(String musica) {
+        if (getIndex() < listaMusica.length){
+                listaMusica[getIndex()] = musica;
+                setIndex(getIndex() + 1);
+                ordenarListaMusica();
+                return true;
+        }
+        return false;
     }
 
     @Override

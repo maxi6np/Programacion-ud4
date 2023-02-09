@@ -1,7 +1,5 @@
 package HerenciaPolimorfismo.MusicPlayerTest;
 
-
-
 public class MusicPlayer{
     private MusicStorage musicStorage;
 
@@ -24,14 +22,16 @@ public class MusicPlayer{
     }
 
     public String mostrar() {
-        String[] listaMusica = musicStorage.getAllMusic();
+        String[] listaCanciones = musicStorage.getAllMusic();
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < listaMusica.length; i++) {
-            if (listaMusica[i] != null) {
-                sb.append((i + 1) + ". " + listaMusica[i] + "\n");
-            }
+        for (int i = 0; i < listaCanciones.length; i++) {
+            sb.append((i + 1));
+            sb.append(". ");
+            sb.append(listaCanciones[i]);
+            sb.append("\n");
         }
+
         return sb.toString();
     }
 }
