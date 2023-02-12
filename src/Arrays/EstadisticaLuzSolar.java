@@ -18,8 +18,7 @@ public class EstadisticaLuzSolar {
     public double getMediaSol() {
         double suma = 0;
         for (int i = 0; i < HORAS.length; i++) {
-            double aux = HORAS[i];
-            suma += aux;
+            suma += HORAS[i];
         }
         return suma / HORAS.length;
     }

@@ -6,7 +6,7 @@ public class Main {
         miCuenta.ingresar(600);
         miCuenta.reintegrar(135.67);
         double interes = miCuenta.obtenerInteres();
-        System.out.println(miCuenta.toString());
+        System.out.println(miCuenta);
         System.out.println("Interes generado: " + interes + " euros");
     }
 }

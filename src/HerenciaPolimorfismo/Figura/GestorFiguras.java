@@ -69,11 +69,11 @@ public class GestorFiguras {
 
 
         circulo.moverHorizontal(-90);
-        circulo.moverHorizontal(-9);
-        circulo.moverHorizontal(16);
+        t.moverHorizontal(-9);
+        cuadrado.moverHorizontal(16);
         circulo.moverVertical(54);
-        circulo.moverVertical(-53);
-        circulo.moverVertical(12);
+        t.moverVertical(-53);
+        cuadrado.moverVertical(12);
 
         System.out.println("Modificando...");
         for (Movible mov : movibles) {

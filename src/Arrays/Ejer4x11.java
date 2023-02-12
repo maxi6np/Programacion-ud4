@@ -20,8 +20,8 @@ public class Ejer4x11 {
     }
 
     private static void imprimirArray(int[] numeros){
-        for (int i = 1; i <= numeros.length - 1; i++) {
-            System.out.println("Frecuencia de " + i + ": " + numeros[i]);
+        for (int i = 0; i <= numeros.length -1 ; i++) {
+            System.out.println("Frecuencia de " + (i + 1) + ": " + numeros[i]);
         }
     }
 }
