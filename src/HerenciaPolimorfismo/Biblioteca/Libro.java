@@ -1,9 +1,10 @@
 package HerenciaPolimorfismo.Biblioteca;
 
-public class Libro extends Elemento {
+public class Libro extends Elemento implements Prestable {
     private String titulo;
     private int anioPublicacion;
     private String autor;
+    private boolean alquilado;
 
     public Libro(int codigoNumerico, String titulo, int anioPublicacion, String autor) {
         super(codigoNumerico);
@@ -21,5 +22,22 @@ public class Libro extends Elemento {
         sb.append(", codigoNumerico=").append(codigoNumerico);
         sb.append('}');
         return sb.toString();
+    }
+    @Override
+    public boolean prestar() {
+        if(alquilado){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    @Override
+    public boolean devolver() {
+        if(alquilado){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

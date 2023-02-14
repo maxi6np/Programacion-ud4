@@ -7,7 +7,6 @@ public class Cine {
     private String nombre;
     private Clientes[] numClientes;
     private Peliculas[] peliculas;
-    private Peliculas[] cartelera;
     private int entradasJovenes;
     private int entradasJubilados;
     private int entradasVIP;
@@ -74,6 +73,17 @@ public class Cine {
             }
         }
         return false;
+    }
+
+    public void mostrarPeliculas(){
+        for (int i = 0; i < peliculas.length; i++) {
+            System.out.println(peliculas[i]);
+        }
+    }
+    public void mostrarClientes(){
+        for (int i = 0; i < numClientes.length; i++) {
+            System.out.println(numClientes[i]);
+        }
     }
 
 

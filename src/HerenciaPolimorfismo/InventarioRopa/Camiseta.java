@@ -1,4 +1,4 @@
-package HerenciaPolimorfismo.InventarioRopa2;
+package HerenciaPolimorfismo.InventarioRopa;
 
 public class Camiseta extends Ropa{
 

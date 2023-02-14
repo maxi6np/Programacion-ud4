@@ -38,7 +38,7 @@ public class Circulo extends Figura {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Circulo circulo = (Circulo) obj;
-        return Double.compare(circulo.radio, radio) == 0 && Double.compare(circulo.PI, PI) == 0;
+        return Double.compare(circulo.radio, radio) == 0;
     }
 
 

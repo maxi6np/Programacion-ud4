@@ -1,4 +1,4 @@
-package HerenciaPolimorfismo.InventarioRopa2;
+package HerenciaPolimorfismo.InventarioRopa;
 
 public class Inventario {
 
@@ -12,8 +12,12 @@ public class Inventario {
     }
 
     public void agregarPrenda(Prenda quePrenda) {
-        prendas[posicion] = quePrenda;
-        posicion++;
+        if (posicion < prendas.length){
+            prendas[posicion] = quePrenda;
+            posicion++;
+        }else{
+            System.out.println("Inventario completo.");
+        }
 
         if (quePrenda instanceof Camiseta) {
             System.out.println("Se ha añadido una camiseta");
@@ -27,7 +31,6 @@ public class Inventario {
     }
 
     public void comparador(Prenda p1, Prenda p2) {
-
         if (p1.equals(p2)) {
             System.out.println(1);
         } else if (p1.getClass() == p2.getClass()) {

@@ -1,8 +1,9 @@
 package HerenciaPolimorfismo.Biblioteca;
 
-public class Videojuego extends Elemento{
+public class Videojuego extends Elemento implements Prestable{
     private String titulo;
     private int edadMinimaRecomendada;
+    private boolean alquilado;
 
     public Videojuego(int codigoNumerico, String titulo, int edadMinimaRecomendada) {
         super(codigoNumerico);
@@ -18,5 +19,23 @@ public class Videojuego extends Elemento{
         sb.append(", codigoNumerico=").append(codigoNumerico);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean prestar() {
+        if(alquilado){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    @Override
+    public boolean devolver() {
+        if(alquilado){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

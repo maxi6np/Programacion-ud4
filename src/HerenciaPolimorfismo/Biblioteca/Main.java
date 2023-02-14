@@ -16,6 +16,6 @@ public class Main {
         biblio.prestar(1);
         biblio.devolver(1);
 
-        //biblio.mostrarCatalogo();
+        biblio.mostrarCatalogo();
     }
 }

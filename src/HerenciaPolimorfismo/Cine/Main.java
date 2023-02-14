@@ -1,12 +1,9 @@
 package HerenciaPolimorfismo.Cine;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     private static Cine cine = new  Cine("Los Prados","Oviedo");
-    private static ArrayList<String> listaPeliculas = new ArrayList<>();
-    private static ArrayList<String> numClientes = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -14,7 +11,7 @@ public class Main {
         int opcionMenu;
         do {
             System.out.println("***********************************");
-            System.out.println("Cine " + cine.getNombre());
+            System.out.println("CineMalva " + cine.getNombre());
             System.out.println("1 - Mostar cartelera");
             System.out.println("2 - Mostar listado de clientes");
             System.out.println("3 - Salir");
@@ -41,11 +38,11 @@ public class Main {
     }
 
     private static void cartelera() {
-        System.out.println("\nLista de películas:");
+        cine.mostrarPeliculas();
     }
 
     private static void listadoClientes() {
-        System.out.println("\nLista de clientes:");
-
+        cine.mostrarClientes();
     }
+
 }

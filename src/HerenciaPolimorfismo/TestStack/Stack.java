@@ -34,15 +34,16 @@ public class Stack {
         if (empty()) {
             return null;
         }
-        String valor = valores[limite];
         limite--;
-        return valor;
+        return valores[limite];
     }
 
     //Muestra todos los elementos de la pila (sin nulls)
     public void show() {
         for (int i = limite; i >= 0; i--) {
-            System.out.println(valores[i]);;
+            if (valores[i] != null){
+                System.out.println(valores[i]);
+            }
         }
     }
 

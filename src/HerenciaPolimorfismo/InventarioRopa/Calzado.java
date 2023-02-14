@@ -1,12 +1,12 @@
-package HerenciaPolimorfismo.InventarioRopa2;
+package HerenciaPolimorfismo.InventarioRopa;
 
 import java.awt.*;
+import java.util.Objects;
 
 public abstract class Calzado extends Prenda {
 
     private int talla;
 
-    private Point punto;
 
     public Calzado(String codigo, String descripcion, double precio, int talla) {
         super(codigo, descripcion, precio);
@@ -17,13 +17,10 @@ public abstract class Calzado extends Prenda {
         return talla;
     }
 
-
     @Override
     public boolean equals(Prenda p1) {
-        if (!(super.equals(p1))) return false;
-        if (!(p1 instanceof Calzado)){
-            return false;
-        }
+        if (!(super.equals(p1))) return true;
+        if (!(p1 instanceof Calzado)) return false;
         return ((Calzado) p1).getTalla() == this.talla;
     }
 

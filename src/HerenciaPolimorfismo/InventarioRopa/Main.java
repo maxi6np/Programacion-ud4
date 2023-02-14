@@ -1,4 +1,4 @@
-package HerenciaPolimorfismo.InventarioRopa2;
+package HerenciaPolimorfismo.InventarioRopa;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Main {
         Prenda bota1 = new Bota("B1", "Bota de invierno", 60, 44, true);
         Prenda bota2 = new Bota("B2", "Bota de primavera", 40, 43, false);
         Prenda zapa1 = new Zapatilla("Z1", "Zapatillas de deporte", 40, 43);
-        Prenda zapa2 = new Zapatilla("Z2", "Zapatilals de paseo", 35, 42);
+        Prenda zapa2 = new Zapatilla("Z2", "Zapatillas de paseo", 35, 42);
 
         I1.agregarPrenda(cami1);
         I1.agregarPrenda(cami2);
